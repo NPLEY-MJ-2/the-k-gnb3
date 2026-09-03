@@ -130,6 +130,18 @@
   .hero { position: relative; width: 100%; background-color: #b9d4ff; overflow: hidden; }
   .hero.is-contained { margin: 0 auto; background: none; }
   .hero img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; }
+  .hero-placeholder-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Pretendard Variable', 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    letter-spacing: -0.76px;
+    color: #ffffff;
+    white-space: nowrap;
+  }
 
 
   /* ---- A-type: flat wrapping hashtag list ---- */
@@ -351,6 +363,10 @@
       heroMedia.appendChild(img);
     } else {
       heroMedia.style.background = 'linear-gradient(135deg, ' + bg(topic.topicKey) + ', ' + fg(topic.topicKey) + '55)';
+      const label = document.createElement('span');
+      label.className = 'hero-placeholder-label';
+      label.textContent = '컨텐츠영역';
+      heroMedia.appendChild(label);
     }
   }
 
